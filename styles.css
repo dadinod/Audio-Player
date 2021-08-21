@@ -1,0 +1,492 @@
+*{
+	/* box-sizing: border-box; */
+  margin:0;
+}
+ul,li,figure,h1,h2,h3,h4,h5,h6,a,p{
+	  margin:0;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+img{
+    width: 100%;
+}
+body{
+    width: 100%;
+    background-color: #2E0D33;
+}
+header{
+  width: 100%;
+  height: 10vw;
+  overflow: hidden;
+  color: #1AE8E3;
+  font-size: 3vw;
+  position: relative;
+}
+#titre{
+  width: 50%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#container{
+  width: 800px;
+  margin: 0 auto;
+}
+#player{
+  margin: 0 auto;
+  background-color: #2E0D33;
+  width: 100%;
+  text-align: center;
+  color: blanchedalmond;
+  position: relative;
+}
+#cadre{
+  width: 97%;
+  margin: 3% auto;
+  z-index: 1;
+}
+
+.song-details{
+  width: 42%;
+  height: 4%;
+  position: absolute;
+  top: 8.5%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  /* justify-content: center; */
+  line-height: 130%;
+  font-size: 130%;
+  overflow: hidden;
+  z-index: 2;
+}
+#artist, #name{
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+#name{
+  text-align: left;
+}
+.name{
+  min-width: 100%;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#name:hover > .name{
+  animation-name: slide1, slide2;
+  animation-delay: 0s, 8s;
+  animation-duration: 8s, 5s;
+  animation-timing-function: linear;
+  overflow: initial;
+  text-overflow: initial;
+}
+
+@-webkit-keyframes slide1 {
+  from {
+      transform: translateX(0);
+  }
+  to {
+    transform: translateX(-150%);
+  }
+}
+@-webkit-keyframes slide2 {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/*------------------- PLATINES --------------------*/
+
+#platines{
+  width: 77%;
+  height: 30%;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+}
+.platine{
+  width: 45%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+}
+#platineg{
+  left: 23%;
+  transform: translate(-50%,-50%);
+}
+#platined{
+  right: 23%;
+  transform: translate(50%,-50%);
+}
+.base_plat{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.plat1{
+ transform: rotate(180deg);
+}
+.plat{
+  width: 75%;
+  height: 188%;
+  position: absolute;
+  top: 35%;
+  left: 49%;
+  transform: translate(-50%,-50%);
+}
+#deco{
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.rotateplat1{
+  -webkit-animation: rotation1 8s infinite linear;
+}
+.rotateplat2{
+  -webkit-animation: rotation2 8s infinite linear;
+}
+
+@-webkit-keyframes rotation1 {
+  from {
+      -webkit-transform: rotate(180deg);
+  }
+  to {
+      -webkit-transform: rotate(539deg);
+  }
+}
+@-webkit-keyframes rotation2 {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+.pause {
+  -webkit-animation-play-state: paused !important; 
+  -moz-animation-play-state: paused !important; 
+  -o-animation-play-state: paused !important;
+   animation-play-state: paused !important;
+}
+/*------------------- FIN PLATINES --------------------*/
+
+/*------------------- PROGRESS --------------------*/
+
+#progress{
+  width: 67%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+}
+ .progress-area{
+  margin: 0 auto;
+  width: 87.5%;
+  height: 6%;
+  border-top-left-radius: 0.5% 50%;
+  border-bottom-left-radius: 0.5% 50%;
+  border-top-right-radius: 0.5% 50%;
+  border-bottom-right-radius: 0.5% 50%;
+  background: #4F4F4F;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  left: 49.85%;
+  transform: translate(-50%,-50%);
+}
+.progress-area .progress-bar{
+  height: 100%;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  background: #1AE8E3;
+}
+.progress-bar::before{
+  content: "";
+  position: absolute;
+  height: 6%;
+  width: 12%;
+  border-top-left-radius: 0.5% 50%;
+  border-bottom-left-radius: 0.5% 50%;
+  border-top-right-radius: 0.5% 50%;
+  border-bottom-right-radius: 0.5% 50%;
+  top: 50%;
+  right: -5px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: inherit;
+  transition: opacity 0.2s ease;
+}
+.progress-area .song-timer{
+  margin-top: 2px;
+}
+
+.song-timer{
+  width: 100%;
+  height: 50%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.song-timer span{
+  font-size: 130%;
+  color: var(--lightblack);
+  position: absolute;
+}
+.times{
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.times span{
+  position: absolute;
+  top: 45%;
+}
+.current-time{
+  left: 43%;
+  transform: translate(-50%,-50%);
+}
+.max-duration{
+  right: 44%;
+  transform: translate(50%,-50%);
+}
+.time{
+  width: 100%;
+  position: absolute;
+  top: 60%;
+}
+#currenttime{
+  left: 45%;
+  transform: translate(-50%,-50%);
+}
+#maxduration{
+  right: 42%;
+  transform: translate(50%,-50%);
+}
+/*------------------- FIN PROGRESS --------------------*/
+
+/*------------------- CONTROLS ---------------------*/
+
+#controls{
+  
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  height: 10%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+}
+#change{
+  overflow: hidden;
+  width: 0;
+}
+
+.btnplay{
+    width: 25%;
+    height: 100%;
+    padding: 0;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+}
+.btn:hover{
+    transform: translate(-50%,-50%) scale(0.97);
+}
+.basebtn{
+  width: 145%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  z-index: 1;
+}
+.btn{
+  width: 60%;
+  top: 48%;
+  left: 48%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/*------------------- FIN CONTROLS ---------------------*/
+
+/*------------------- ICONSOUND --------------------*/
+
+
+#iconsound{
+  width: 10%;
+  height: 15%;
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+}
+#mute{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+#mute img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(2);
+  cursor: pointer;
+}
+
+/*------------------- FIN ICONSOUND --------------------*/
+
+/*------------------- PLAYLIST --------------------*/
+
+#playlist_slot{
+  width: 12%;
+  position: absolute;
+  top: 45.5%;
+  left: 12%;
+  transform: translate(-50%,-50%);
+  z-index: 5;
+}
+#playlist_slot figure{
+  width: 100%;
+}
+#list{
+  position: absolute;
+  width: 47%;
+  height: 48%;
+  top: 45.5%;
+  left: 35%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 1%;
+  border-top-right-radius: 5% 5%;
+  border-bottom-right-radius: 5% 5%;
+}
+.music-list{
+  position: absolute;
+  width: 96%;
+  height: 94%;
+  top: 50%;
+  right: 95%;
+  transform: translateY(-50%);
+  background-color: #2E0D33;
+  padding: 1% 4% 1% 1%;
+  border-top-right-radius: 5% 5%;
+  border-bottom-right-radius: 5% 5%;
+  box-shadow: 6px 6px 12px #110916,-6px -6px 12px transparent!important;
+  overflow: hidden;
+}
+#backlist{
+  background-color: #2E0D33;
+  width: 98.2%;
+  height: 96%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-top-right-radius: 4% 4%;
+  border-bottom-right-radius: 4% 4%;
+  z-index: 1;
+  box-shadow: inset 2px 2px 5px #110916,inset -3px -3px 7px #6A227C!important;
+}
+.header{
+  height: 10%;
+  font-size: 150%;
+  padding: 3%;
+  color: #1AE8E3;
+  position: relative;
+  text-align: justify;
+  padding-left: 5%;
+  line-height: 150%;
+  z-index: 2;
+}
+.list_title{
+width: 100%;
+padding-left: 5%;
+}
+#close{
+  width: 6%;
+  position: absolute;
+  top: 63%;
+  right: 0%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+}
+#close:hover{
+  transform: translate(-50%,-50%) scale(1.1);
+  transition-duration: 0.2s;
+}
+.txtlist{
+  height: 100%;
+  text-align: justify;
+  padding-left: 2%;
+}
+.music-list ul{
+  width: 100%;
+  height: 79%;
+  position: relative;
+  overflow: scroll;
+  padding: 0 8%;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  border-bottom-right-radius: 5% 5%;
+  z-index: 2;
+}
+.music-list ul::-webkit-scrollbar {
+  display: none;
+}
+.music-list ul li{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 120%;
+  padding: 2% 0;
+  border-bottom: #D31CB0 solid 1px;
+  cursor: pointer;
+}
+.music-list ul li:hover{
+  background-color: #1D0921;
+}
+.timelist{
+  line-height: 220%;
+  height: 100%;
+}
+/*------------------- FIN PLAYLIST --------------------*/
+
+.hyde{
+  display: none;
+}
+.bobor{
+  border: #1AE8E3 solid 1px;
+}
+.boborv{
+  border: greenyellow solid 1px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+	<meta name="author" content="N Stanburski">
+	<meta name="description" content="Lecteur audio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<header>
+    <figure id="titre">
+        <img src="images/SVG/titre.svg" alt="">
+    </figure>
+    
+</header>
+<div id="container">
+    <div id="player">
+        <figure id="cadre">
+            <img src="images/SVG/cadre.svg" alt="">
+        </figure>
+        <div class="song-details ">
+            <div id="artist">
+                <p class="artist"></p>
+            </div>
+            &nbsp;/&nbsp;
+            <div id="name">
+                <p class="name"></p>
+            </div>
+        </div>
+        <div id="platines">
+            <div id="platineg" class="platine">
+                <figure class="base_plat"><img src="images/SVG/base_platine_g.svg" alt=""></figure>
+                <figure id="plat1" class="plat"><img class="plat1 rotateplat1 pause" src="images/SVG/platine.svg" alt=""></figure>
+            </div>
+            <div id="deco">
+                <figure><img src="images/SVG/deco.svg" alt=""></figure>
+            </div>
+            <div id="platined" class="platine">
+                <figure class="base_plat"><img src="images/SVG/base_platine_d.svg" alt=""></figure>
+                <figure id="plat2" class="plat"><img class="plat2 rotateplat2 pause" src="images/SVG/platine.svg" alt=""></figure>
+            </div>
+        </div>
+
+        <div id="progress">
+            <figure id="fond_progress" class="">
+                <img src="images/SVG/progress.svg" alt="">
+            </figure>
+            <div class="progress-area">                
+                <div class="progress-bar">
+                  <audio id="main-audio" src=""></audio>
+                </div>
+            </div>
+            <div class="song-timer">
+                <div class="times">
+                    <figure id="currenttime" class="time">
+                        <img src="images/SVG/time.svg" alt="">
+                    </figure>
+                    <span class="current-time">00:00</span>
+                </div>
+                <div class="times">
+                    <figure id="maxduration" class="time">
+                        <img src="images/SVG/time.svg" alt="">
+                    </figure>
+                    <span class="max-duration">00:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="controls">
+            <div id="repeat_plist" title="Lecture simple" class="btnplay">
+                <div id="change">repeat</div>
+                <figure class="basebtn">
+                    <img src="images/SVG/base_btn.svg" alt="">
+                </figure>
+                <figure id="repeat_icon" class="btn"><img src="images/SVG/loop.svg" alt=""></figure>
+                <figure id="repeat_one_icon" class="btn "><img src="images/SVG/songloop.svg" alt=""></figure>
+                <figure id="shuffle_icon" class="btn"><img src="images/SVG/aleat.svg" alt=""></figure>
+            </div>
+            <div id="prev" class="btnplay">
+                <figure class="basebtn">
+                    <img src="images/SVG/base_btn.svg" alt="">
+                </figure>
+                <figure title="Précédent" class="btn">
+                    <img src="images/SVG/prev.svg" alt="">
+                </figure>
+            </div>
+            <div id="play_pause" class="btnplay" data-clickcount="0">
+                <!-- <i class="playpausebtn"></i> -->
+                <figure class="basebtn">
+                    <img src="images/SVG/base_btn.svg" alt="">
+                </figure>
+                <figure class="btn">
+                    <img id="play" title="Play" src="images/SVG/play.svg" alt="">
+                    <img id="pause" title="Pause" class="hyde" src="images/SVG/pause.svg" alt="">
+                </figure>
+            </div>
+            <div id="next" class="btnplay">
+                <figure class="basebtn">
+                    <img src="images/SVG/base_btn.svg" alt="">
+                </figure>
+                <figure class="btn">
+                    <img title="Suivant" src="images/SVG/next.svg" alt="">
+                </figure>
+            </div>
+            <div id="playlist" class="btnplay">
+                <figure class="basebtn">
+                    <img src="images/SVG/base_btn.svg" alt="">
+                </figure>
+                <figure class="btn">
+                    <img title="Playlist" src="images/SVG/playlist.svg" alt="">
+                </figure>
+            </div>
+        </div>
+        <div id="iconsound" title="Mute">
+            <figure id="mute">
+                <img id="sound_on" src="images/SVG/sound_on.svg" alt="">
+                <img id="sound_off" class="hyde" src="images/SVG/sound_off.svg" alt="">
+            </figure>
+        </div>
+        <div id="playlist_slot">
+            <figure>
+                <img src="images/SVG/base_list.svg" alt="">
+            </figure>
+        </div>
+        <div id="list">
+            <div class="music-list">
+                <div id="backlist"></div>
+              <div class="header">
+                <span class="list_title">Music list</span>
+                <figure id="close">
+                    <img src="images/SVG/close.svg" alt="">
+                </figure>
+              </div>
+              <ul>
+                <!-- here li list are coming from js -->
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="tracklist.js"></script>
+    <script type="text/javascript" src="lecteur.js"></script>
+</body>
+</html>
